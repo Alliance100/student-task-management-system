@@ -1,13 +1,6 @@
-/**
- * Task Controller
- * Handles all task-related business logic
- */
-
 const Task = require("../models/Task");
 
-/**
- * Create Task
- */
+// Create Task
 
 const createTask = async (req, res, next) => {
     try {
@@ -24,9 +17,7 @@ const createTask = async (req, res, next) => {
     }
 };
 
-/**
- * Get All Tasks
- */
+// Get All Tasks
 
 const getAllTasks = async (req, res, next) => {
     try {
@@ -47,9 +38,7 @@ const getAllTasks = async (req, res, next) => {
     }
 };
 
-/**
- * Get Single Task
- */
+// Get Single Task By ID
 
 const getTaskById = async (req, res, next) => {
     try {
@@ -74,9 +63,7 @@ const getTaskById = async (req, res, next) => {
     }
 };
 
-/**
- * Update Task
- */
+// Update Task
 
 const updateTask = async (req, res, next) => {
     try {
@@ -108,9 +95,7 @@ const updateTask = async (req, res, next) => {
     }
 };
 
-/**
- * Delete Task
- */
+// Delete Task
 
 const deleteTask = async (req, res, next) => {
     try {
@@ -127,6 +112,7 @@ const deleteTask = async (req, res, next) => {
         res.status(200).json({
             success: true,
             message: "Task deleted successfully",
+            data: null
         });
 
     } catch (error) {

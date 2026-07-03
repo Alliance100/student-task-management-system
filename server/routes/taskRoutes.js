@@ -1,8 +1,3 @@
-/**
- * Task Routes
- * Defines all task-related API endpoints
- */
-
 const express = require("express");
 
 const router = express.Router();

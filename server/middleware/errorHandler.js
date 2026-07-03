@@ -1,8 +1,3 @@
-/**
- * Global Error Handler Middleware
- * Catches unexpected application errors
- */
-
 const errorHandler = (err, req, res, next) => {
     console.error("❌ Error:", err.message);
 
