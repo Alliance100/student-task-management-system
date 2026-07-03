@@ -1,0 +1,37 @@
+{
+  "name": "student-task-management-system",
+  "version": "1.0.0",
+  "description": "Student Task Management System",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alliance100/student-task-management-system.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mongodb",
+    "student",
+    "task-management"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Alliance100/student-task-management-system/issues"
+  },
+  "homepage": "https://github.com/Alliance100/student-task-management-system#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
