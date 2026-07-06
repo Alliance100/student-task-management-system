@@ -1,0 +1,29 @@
+:root {
+
+    --primary-color: #2563EB;
+    --sidebar-color: #111827;
+    --background-color: #F5F7FB;
+    --card-color: #FFFFFF;
+
+    --success-color: #22C55E;
+    --warning-color: #F59E0B;
+    --danger-color: #EF4444;
+
+    --text-color: #1E293B;
+    --text-light: #64748B;
+
+
+    --border-color: #E2E8F0;
+
+
+    --font-family: "Poppins", sans-serif;
+
+
+    --border-radius: 10px;
+
+
+    --shadow:
+        0 4px 12px rgba(15, 23, 42, .08);
+    --transition: .3s ease;
+
+}
