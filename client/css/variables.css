@@ -27,3 +27,19 @@
     --transition: .3s ease;
 
 }
+
+body.dark{
+
+    --background-color:#0F172A;
+
+    --card-color:#1E293B;
+
+    --sidebar-color:#020617;
+
+    --text-color:#F8FAFC;
+
+    --text-light:#94A3B8;
+
+    --border-color:#334155;
+
+}
