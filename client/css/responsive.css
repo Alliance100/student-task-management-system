@@ -1,0 +1,269 @@
+@media (min-width: 1400px) {
+    .main-content {
+        padding: 40px 60px;
+    }
+
+    .content-section {
+        grid-template-columns: 2.5fr 1fr;
+        gap: 32px;
+    }
+
+    .stats-section {
+        gap: 28px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .main-content {
+        padding: 24px 32px;
+    }
+
+    .stats-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .content-section {
+        grid-template-columns: 1.6fr 1fr;
+        gap: 20px;
+    }
+
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .filter-group {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .filter-group select,
+    #clearFilters {
+        flex: 1;
+        min-width: 140px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .sidebar {
+        position: fixed;
+        left: -280px;
+        top: 0;
+        width: 260px;
+        height: 100vh;
+        z-index: 1001;
+        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 4px 0 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: 0.25s;
+    }
+
+    .menu-toggle:hover {
+        background: #1D4ED8;
+    }
+
+    .sidebar-close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1002;
+    }
+
+    .main-content {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .header {
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .content-section {
+        grid-template-columns: 1fr;
+    }
+
+    .tasks-section {
+        max-height: none;
+        margin-bottom: 20px;
+    }
+
+    .table-container {
+        max-height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 10px;
+    }
+
+    .welcome-text h1 {
+        font-size: 22px;
+    }
+
+    .welcome-text p {
+        font-size: 14px;
+    }
+
+    .stats-section {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+
+    .filter-group {
+        flex-direction: column;
+    }
+
+    .filter-group select,
+    #clearFilters {
+        width: 100%;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .tasks-table {
+        min-width: 700px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .menu-toggle {
+        align-self: flex-end;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+    }
+
+    .welcome-text h1 {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: 16px;
+    }
+
+    .stat-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .stat-info h2 {
+        font-size: 28px;
+    }
+
+    .tasks-section,
+    .form-section {
+        padding: 16px;
+        width: 95vw;
+    }
+
+    .action-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 1270px){
+    .toolbar{
+        display: inline;
+    }
+
+    .filter-group{
+        margin-top: 10px;
+    }
+
+    td:last-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+}
+
+/* ==========================================================
+   LARGE DESKTOPS & 1920x1080 SCREENS
+   Forces the layout to fill all empty space at the bottom
+========================================================== */
+@media (min-width: 1440px) {
+    .main-content {
+        padding: 40px 60px;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Ensures main area reaches the very bottom */
+    }
+
+    .content-section {
+        flex: 1; /* Stretches to fill remaining vertical space */
+        grid-template-columns: 2.5fr 1fr;
+        align-items: stretch; /* Forces both left and right cards to stretch vertically */
+    }
+
+    .tasks-section {
+        max-height: none; /* Removes the 544px limit */
+        height: 100%; /* Fills the stretched grid container */
+    }
+
+    .table-container {
+        flex: 1; /* Allows the table area to grow dynamically */
+        max-height: none; 
+        overflow-y: auto;
+    }
+
+    .form-section {
+        height: 100%; /* Stretches the form card to match the table card's height */
+    }
+
+    
+}
