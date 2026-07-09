@@ -232,37 +232,33 @@
 }
 }
 
-/* ==========================================================
-   LARGE DESKTOPS & 1920x1080 SCREENS
-   Forces the layout to fill all empty space at the bottom
-========================================================== */
 @media (min-width: 1440px) {
     .main-content {
         padding: 40px 60px;
         display: flex;
         flex-direction: column;
-        min-height: 100vh; /* Ensures main area reaches the very bottom */
+        min-height: 100vh;
     }
 
     .content-section {
-        flex: 1; /* Stretches to fill remaining vertical space */
+        flex: 1; 
         grid-template-columns: 2.5fr 1fr;
-        align-items: stretch; /* Forces both left and right cards to stretch vertically */
+        align-items: stretch; 
     }
 
     .tasks-section {
-        max-height: none; /* Removes the 544px limit */
-        height: 100%; /* Fills the stretched grid container */
+        max-height: none;
+        height: 100%; 
     }
 
     .table-container {
-        flex: 1; /* Allows the table area to grow dynamically */
+        flex: 1; 
         max-height: none; 
         overflow-y: auto;
     }
 
     .form-section {
-        height: 100%; /* Stretches the form card to match the table card's height */
+        height: 100%; 
     }
 
     
