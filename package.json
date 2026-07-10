@@ -2,6 +2,7 @@
   "name": "student-task-management-system",
   "version": "1.0.0",
   "description": "Student Task Management System",
+  "main": "api/index.js",
   "scripts": {
     "start": "node server/server.js",
     "dev": "nodemon server/server.js"
