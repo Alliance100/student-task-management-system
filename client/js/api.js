@@ -1,4 +1,7 @@
-const API_URL = "http://localhost:5000/api/tasks";
+const API_URL = 
+    window.location.port === "5000" || (!window.location.origin.includes("localhost") && !window.location.origin.includes("127.0.0.1") && window.location.protocol !== "file:")
+        ? "/api/tasks"
+        : "http://localhost:5000/api/tasks";
 
 // Get all tasks
 async function getTasks() {
