@@ -13,9 +13,9 @@
     align-items: center;
     background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
     font-family: 'Inter', 'Poppins', sans-serif;
-    overflow: hidden;
+    overflow-y: auto;
     position: relative;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 .auth-page::before {
