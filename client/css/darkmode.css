@@ -158,3 +158,15 @@ body.dark .table-container::-webkit-scrollbar-thumb {
 body.dark .table-container::-webkit-scrollbar-thumb:hover {
     background: #64748B;
 }
+
+body.dark .sidebar-user-profile {
+    border-top-color: rgba(255, 255, 255, 0.06);
+}
+
+body.dark .logout-btn {
+    background: rgba(239, 68, 68, 0.15);
+}
+
+body.dark .logout-btn:hover {
+    background: rgba(239, 68, 68, 0.3);
+}

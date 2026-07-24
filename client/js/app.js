@@ -8,6 +8,12 @@ let currentSort = "";
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    // Check authentication first
+    if (!checkAuth()) return;
+
+    // Load user profile into sidebar
+    loadUserProfile();
+
     loadTasks();
 
     initializeSearch();
@@ -34,7 +40,52 @@ document.getElementById("deleteModal").addEventListener("click", (e) => {
 
 });
 
+// Logout button
+const logoutBtn = document.getElementById("logoutBtn");
+if (logoutBtn) {
+    logoutBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        logout();
+    });
+}
+
 });
+
+function loadUserProfile() {
+    const user = getUser();
+    if (!user) return;
+
+    // Set welcome message
+    const welcomeH1 = document.querySelector(".welcome-text h1");
+    if (welcomeH1) {
+        const firstName = user.name.split(" ")[0];
+        welcomeH1.textContent = `Welcome Back, ${firstName}!`;
+    }
+
+    // Set user avatar initials
+    const avatarEl = document.getElementById("userAvatar");
+    if (avatarEl) {
+        const initials = user.name
+            .split(" ")
+            .map(n => n[0])
+            .join("")
+            .toUpperCase()
+            .slice(0, 2);
+        avatarEl.textContent = initials;
+    }
+
+    // Set user name
+    const nameEl = document.getElementById("userName");
+    if (nameEl) {
+        nameEl.textContent = user.name;
+    }
+
+    // Set user email
+    const emailEl = document.getElementById("userEmail");
+    if (emailEl) {
+        emailEl.textContent = user.email;
+    }
+}
 
 async function loadTasks() {
     allTasks = await getTasks();

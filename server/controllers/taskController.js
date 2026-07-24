@@ -4,6 +4,8 @@ const Task = require("../models/Task");
 
 const createTask = async (req, res, next) => {
     try {
+        req.body.user = req.user._id;
+
         const task = await Task.create(req.body);
 
         res.status(201).json({
@@ -17,12 +19,12 @@ const createTask = async (req, res, next) => {
     }
 };
 
-// Get All Tasks
+// Get All Tasks (only user's own tasks)
 
 const getAllTasks = async (req, res, next) => {
     try {
 
-        const tasks = await Task.find().sort({
+        const tasks = await Task.find({ user: req.user._id }).sort({
             createdAt: -1
         });
 
@@ -38,12 +40,15 @@ const getAllTasks = async (req, res, next) => {
     }
 };
 
-// Get Single Task By ID
+// Get Single Task By ID (only if owned by user)
 
 const getTaskById = async (req, res, next) => {
     try {
 
-        const task = await Task.findById(req.params.id);
+        const task = await Task.findOne({
+            _id: req.params.id,
+            user: req.user._id
+        });
 
         if (!task) {
             return res.status(404).json({
@@ -63,13 +68,13 @@ const getTaskById = async (req, res, next) => {
     }
 };
 
-// Update Task
+// Update Task (only if owned by user)
 
 const updateTask = async (req, res, next) => {
     try {
 
-        const task = await Task.findByIdAndUpdate(
-            req.params.id,
+        const task = await Task.findOneAndUpdate(
+            { _id: req.params.id, user: req.user._id },
             req.body,
             {
                 new: true,
@@ -95,12 +100,15 @@ const updateTask = async (req, res, next) => {
     }
 };
 
-// Delete Task
+// Delete Task (only if owned by user)
 
 const deleteTask = async (req, res, next) => {
     try {
 
-        const task = await Task.findByIdAndDelete(req.params.id);
+        const task = await Task.findOneAndDelete({
+            _id: req.params.id,
+            user: req.user._id
+        });
 
         if (!task) {
             return res.status(404).json({

@@ -16,6 +16,14 @@
       "dest": "api/index.js"
     },
     {
+      "src": "/login",
+      "dest": "client/login.html"
+    },
+    {
+      "src": "/register",
+      "dest": "client/register.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "client/$1"
     }

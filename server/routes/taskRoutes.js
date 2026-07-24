@@ -11,6 +11,10 @@ const {
 } = require("../controllers/taskController");
 
 const validateTask = require("../middleware/validateTask");
+const { protect } = require("../middleware/auth");
+
+// All task routes are protected
+router.use(protect);
 
 // GET all tasks
 router.get("/", getAllTasks);
